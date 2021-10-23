@@ -24,21 +24,17 @@ void Square::display(){
 }
 
 Square::Square(const Square& source):
-    Shape(source.origin.getx(), source.origin.gety(), source.getName())
+    Shape(source)
 {
     side_a = source.get_side_a();
 }
 
-Square& Square::operator =(Square&s){
-    if(this != &s){
-        delete [] shapeName;
-        origin.setx(s.origin.getx());
-        origin.sety(s.origin.gety());
-        int len = strlen(s.getName());
-        shapeName = new char[len];  // are we allowed to use this? 
-        strcpy(shapeName, s.getName());
-        side_a = s.side_a;
+Square& Square::operator =(Square&rhs){
+    if(this != &rhs){
+        Shape::operator=(rhs);
+        side_a = rhs.get_side_a();
     }
+    return *this;
 }
 
 

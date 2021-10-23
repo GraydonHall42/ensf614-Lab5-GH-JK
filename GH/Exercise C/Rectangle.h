@@ -17,7 +17,7 @@ public:
     virtual double perimeter(){return 2 * side_a + 2*side_b;}
     void set_side_b(double value){side_b = value;}
     Rectangle(const Rectangle& source);
-    Rectangle& operator =(Rectangle&s);
+    Rectangle& operator =(Rectangle&rhs);
 };
 
 

@@ -35,20 +35,26 @@ void GraphicsWorld::run(){
         b.display();
         double d = a.distance(b);
         cout <<"\nDistance between square a, and b is: " << d << endl;
+
+
         Rectangle rec1 = a;
         rec1.display();
-        cout << "\nTesting assignment operator in class Rectangle:" <<endl;
+        cout << "\n\n\nTesting assignment operator in class Rectangle:-------------------------------------------" <<endl;
         Rectangle rec2 (3, 4, 11, 7, "RECTANGLE rec2");
         rec2.display();
         rec2 = a;
         a.set_side_b(200);
         a.set_side_a(100);
+
+
         cout << "\nExpected to display the following values for objec rec2: " << endl;
         cout << "Rectangle Name: RECTANGLE A\n" << "X-coordinate: 5\n" << "Y-coordinate: 7\n"
         << "Side a: 12\n" << "Side b: 15\n" << "Area: 180\n" << "Perimeter: 54\n" ;
         cout << "\nIf it doesn't there is a problem with your assignment operator.\n" << endl;
         rec2.display();
-        cout << "\nTesting copy constructor in class Rectangle:" <<endl;
+
+
+        cout << "\n\n\nTesting copy constructor in class Rectangle:-------------------------------------------" <<endl;
         Rectangle rec3 (a);
         rec3.display();
         a.set_side_b(300);
@@ -61,7 +67,7 @@ void GraphicsWorld::run(){
     #endif // end of block to test Rectangle
 
     #if 1 // Change 0 to 1 to test using array of pointer and polymorphism
-        cout << "\nTesting array of pointers and polymorphism:" <<endl;
+        cout << "\n\n\nTesting array of pointers and polymorphism:-------------------------------------------" <<endl;
         Shape* sh[4];
         sh[0] = &s;
         sh[1] = &b;
@@ -74,7 +80,7 @@ void GraphicsWorld::run(){
     #endif // end of block to test array of pointer and polymorphism
     
     #if 1
-        cout << "\nTesting Functions in class Circle:" <<endl;
+        cout << "\n\n\nTesting Functions in class Circle:-------------------------------------------" <<endl;
         Circle c (3, 5, 9, "CIRCLE C");
         c.display();
         cout << "the area of " << c.getName() <<" is: "<< c.area() << endl;

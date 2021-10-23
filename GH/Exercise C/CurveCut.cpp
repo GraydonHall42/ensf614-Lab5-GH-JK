@@ -12,7 +12,7 @@
 
 
 // CurveCut::CurveCut(double x, double y, double a, double b, double r, const char* name):
-//     Rectangle(x, y, a, b, name), Circle(x, y, r, name){}
+//     Rectangle(x, y, a, b, name), Circle(x, y, r, name), Shape(x, y, name){}
 
 // void CurveCut::display(){
 //     Shape::display();  // call parent display method

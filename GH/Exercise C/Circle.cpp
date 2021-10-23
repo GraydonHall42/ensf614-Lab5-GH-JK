@@ -22,25 +22,19 @@ void Circle::display(){
     cout << "Perimeter: "<< setw(12) << perimeter()  << endl;
 
 }
-
 Circle::Circle(const Circle& source):
-    Shape(source.origin.getx(), source.origin.gety(), source.getName())
+    Shape(source)
 {
     radius = source.get_radius();
 }
 
-Circle& Circle::operator =(Circle&s){
-    if(this != &s){
-        delete [] shapeName;
-        origin.setx(s.origin.getx());
-        origin.sety(s.origin.gety());
-        int len = strlen(s.getName());
-        shapeName = new char[len];  // are we allowed to use this? 
-        strcpy(shapeName, s.getName());
-        radius = s.get_radius();
+Circle& Circle::operator =(Circle &rhs){
+    if(this != &rhs){
+        Shape::operator=(rhs);
+        radius = rhs.get_radius();
     }
+    return *this;
 }
-
 
 // int main(){
 //     Square x(5, 7, 12, "SQUARE - S");

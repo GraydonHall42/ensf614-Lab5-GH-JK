@@ -11,7 +11,7 @@ using namespace std;
 
 
 Rectangle::Rectangle(double x, double y, double a, double b, const char* name):
-    Square(x, y, a, name)
+    Square(x, y, a, name), Shape(x, y, name)
 {
     side_b = b;
 }
@@ -26,34 +26,16 @@ void Rectangle::display(){
 }
 
 Rectangle::Rectangle(const Rectangle& source):
-    Square(source.origin.getx(), source.origin.gety(), 
-    source.get_side_a() ,source.getName())
+    Square(source), Shape(source)
 {
     side_b = source.get_side_b();
 }
 
-Rectangle& Rectangle::operator =(Rectangle&s){
-    if(this != &s){
-        delete [] shapeName;
-        origin.setx(s.origin.getx());
-        origin.sety(s.origin.gety());
-        int len = strlen(s.getName());
-        shapeName = new char[len];  // are we allowed to use this? 
-        strcpy(shapeName, s.getName());
-        side_a = s.side_a;
-        side_b = s.side_b;
+Rectangle& Rectangle::operator =(Rectangle&rhs){
+
+    if(this != &rhs){
+        Square::operator=(rhs);
+        side_b = rhs.get_side_b();
     }
+    return *this;
 }
-
-// int main(){
-//     Rectangle r(5, 7, 2, 3, "RECCY - S");
-//     // Point xx = x.getOrigin();
-//     // cout<< "X name: " << x.getName() << endl;
-//     // x.display();
-//     // x.move(1,1);
-//     // cout << "X after move: " << endl;
-//     r.display();
-//     return 0;
-    
-// }
-
