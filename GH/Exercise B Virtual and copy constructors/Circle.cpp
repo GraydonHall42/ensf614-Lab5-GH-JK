@@ -16,11 +16,7 @@ Circle::Circle(double x, double y, double r, const char* name):
 }
 
 void Circle::display(){
-    cout << fixed;
-    cout << setprecision(2);
-    cout << "\nCircle Name: " << shapeName << endl;
-    cout << "X-coordinate: " << setw(9) << origin.getx() << endl;
-    cout << "Y-coordinate: " << setw(9) << origin.gety() << endl;
+    Shape::display();  // call parent display method
     cout << "Radius: " << setw(15) << get_radius() << endl;
     cout << "Area: " << setw(17) << area() << endl;
     cout << "Perimeter: "<< setw(12) << perimeter()  << endl;
@@ -39,3 +35,11 @@ Circle& Circle::operator =(Circle &rhs){
     }
     return *this;
 }
+
+// int main(){
+//     Square x(5, 7, 12, "SQUARE - S");
+//     x.display();
+//     return 0;
+    
+// }
+

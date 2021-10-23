@@ -16,6 +16,13 @@ Shape::Shape(double x, double y, const char* name):origin(x,y){
 
 }
 
+void Shape::display(){
+    cout << fixed;
+    cout << setprecision(2);
+    cout << "\nShape Name: " << shapeName << endl;
+    cout << "X-coordinate: " << setw(9) << origin.getx() << endl;
+    cout << "Y-coordinate: " << setw(9) << origin.gety() << endl;
+}
 
 double Shape::distance (Shape& other){
     return sqrt(pow(abs(origin.getx() - other.origin.getx()),2)

@@ -12,17 +12,13 @@ public:
     Shape(double x, double y, const char* name);
     ~Shape(){delete shapeName;}
     const Point & getOrigin() const{return origin;}
-    virtual void display()=0;
+    virtual void display();
     double distance (Shape& other);
     static double distance (Shape& the_shape, Shape& other);
     void move (double dx, double dy);
     char * getName() const{return shapeName;}
     Shape(const Shape& source);
     Shape& operator =(Shape&s);
-
-    // pure virtual functions?
-    virtual double perimeter() =0;
-    virtual double area() = 0;
 };
 
 

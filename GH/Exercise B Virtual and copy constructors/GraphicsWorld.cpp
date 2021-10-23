@@ -6,7 +6,6 @@
 using namespace std;
 #include "Rectangle.h"
 #include "Circle.h"
-#include "CurveCut.h"
 
 
 void GraphicsWorld::run(){
@@ -69,15 +68,15 @@ void GraphicsWorld::run(){
 
     #if 1 // Change 0 to 1 to test using array of pointer and polymorphism
         cout << "\n\n\nTesting array of pointers and polymorphism:-------------------------------------------" <<endl;
-        Shape* sh1[4];
-        sh1[0] = &s;
-        sh1[1] = &b;
-        sh1 [2] = &rec1;  // same as a
-        sh1 [3] = &rec3;  // same as a
-        sh1 [0]->display();
-        sh1 [1]->display();
-        sh1 [2]->display();
-        sh1 [3]->display();
+        Shape* sh[4];
+        sh[0] = &s;
+        sh[1] = &b;
+        sh [2] = &rec1;  // same as a
+        sh [3] = &rec3;  // same as a
+        sh [0]->display();
+        sh [1]->display();
+        sh [2]->display();
+        sh [3]->display();
     #endif // end of block to test array of pointer and polymorphism
     
     #if 1
@@ -90,8 +89,7 @@ void GraphicsWorld::run(){
         cout << "\nThe distance between rectangle a and circle c is: " <<d << endl;
     # endif
 
-    #if 1
-        cout << "\n\n\n CURVE CUT SECTION ------------------------------------------------------" << endl;
+    #if 0
         CurveCut rc (6, 5, 10, 12, 9, "CurveCut rc");
         rc.display();
         cout << "the area of " << rc.getName() <<" is: "<< rc.area();
@@ -105,30 +103,23 @@ void GraphicsWorld::run(){
         sh [2] = &c;
         sh [3] = &rc;
         sh [0]->display();
-        cout << "\n\nthe area of "<< sh[0]->getName() << "is: "<< sh[0] ->area();
-        cout << "\n\nthe perimeter of " << sh[0]->getName () << " is: "<< sh[0]->perimeter();
+        cout << "\nthe area of "<< sh[0]->getName() << "is: "<< sh[0] ->area();
+        cout << "\nthe perimeter of " << sh[0]->getName () << " is: "<< sh[0]->perimeter();
         sh [1]->display();
-        cout << "\n\nthe area of "<< sh[1]->getName() << "is: "<< sh[1] ->area();
-        cout << "\n\nthe perimeter of " << sh[0]->getName () << " is: "<< sh[1]->perimeter();
+        cout << "\nthe area of "<< sh[1]->getName() << "is: "<< sh[1] ->area();
+        cout << "\nthe perimeter of " << sh[0]->getName () << " is: "<< sh[1]->perimeter();
         sh [2]->display();
-        cout << "\n\nthe area of "<< sh[2]->getName() << "is: "<< sh[2] ->area();
-        cout << "\n\nthe circumference of " << sh[2]->getName ()<< " is: "<< sh[2]->perimeter();
+        cout << "\nthe area of "<< sh[2]->getName() << "is: "<< sh[2] ->area();
+        cout << "\nthe circumference of " << sh[2]->getName ()<< " is: "<< sh[2]->perimeter();
         sh [3]->display();
-        cout << "\n\nthe area of "<< sh[3]->getName() << "is: "<< sh[3] ->area();
-        cout << "\n\nthe perimeter of " << sh[3]->getName () << " is: "<< sh[3]->perimeter();
-
-        
-        cout << "\n\n\nTesting copy constructor in class CurveCut:-----------------------------------------" <<endl;
+        cout << "\nthe area of "<< sh[3]->getName() << "is: "<< sh[3] ->area();
+        cout << "\nthe perimeter of " << sh[3]->getName () << " is: "<< sh[3]->perimeter();
+        cout << "\nTesting copy constructor in class CurveCut:" <<endl;
         CurveCut cc = rc;
-        rc.display();
-        cout<<"\ncc after copying (should match rc)"<<endl;
         cc.display();
-        cout << "\n\n\nTesting assignment operator in class CurveCut:---------------------------------------" <<endl;
+        cout << "\nTesting assignment operator in class CurveCut:" <<endl;
         CurveCut cc2(2, 5, 100, 12, 9, "CurveCut cc2");
         cc2.display();
-
-        cout << "\ncc2 after assignment (should match CC)" << endl;
-        cc.display();
         cc2 = cc;
         cc2.display();
     #endif

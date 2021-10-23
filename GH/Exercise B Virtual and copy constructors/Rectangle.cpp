@@ -17,11 +17,7 @@ Rectangle::Rectangle(double x, double y, double a, double b, const char* name):
 }
 
 void Rectangle::display(){
-    cout << fixed;
-    cout << setprecision(2);
-    cout << "\nRectangle Name: " << shapeName << endl;
-    cout << "X-coordinate: " << setw(9) << origin.getx() << endl;
-    cout << "Y-coordinate: " << setw(9) << origin.gety() << endl;
+    Shape::display();  // call parent display method
     cout << "Side a: " << setw(15) << get_side_a() << endl;
     cout << "Side b: " << setw(15) << get_side_b() << endl;
     cout << "Area: " << setw(17) << area() << endl;
