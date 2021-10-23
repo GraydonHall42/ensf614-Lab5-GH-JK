@@ -11,18 +11,20 @@ protected:
 public:
     Shape(double x, double y, const char* name);
     ~Shape(){delete shapeName;}
-    const Point & getOrigin() const{return origin;}
-    virtual void display()=0;
-    double distance (Shape& other);
-    static double distance (Shape& the_shape, Shape& other);
-    void move (double dx, double dy);
-    char * getName() const{return shapeName;}
     Shape(const Shape& source);
     Shape& operator =(Shape&s);
 
-    // pure virtual functions?
-    virtual double perimeter() =0;
-    virtual double area() = 0;
+    double distance (Shape& other);
+    static double distance (Shape& the_shape, Shape& other);
+    void move (double dx, double dy);
+    virtual void display();
+
+    const Point & getOrigin() const{return origin;}
+    char * getName() const{return shapeName;}
+    
+    // pure virtual functions... why do we get error if these aren't virtual?
+    virtual double perimeter()=0;
+    virtual double area()=0;
 };
 
 

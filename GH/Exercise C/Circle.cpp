@@ -1,10 +1,11 @@
-#include "Shape.h"
-#include "Point.h"
-#include <iostream>
 using namespace std;
+#include <iostream>
 #include <math.h>  
 #include <cmath> 
 #include <iomanip>
+
+#include "Shape.h"
+#include "Point.h"
 #include <string.h>
 #include "Circle.h"
 

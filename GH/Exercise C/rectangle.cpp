@@ -1,13 +1,14 @@
-#include "Shape.h"
-#include "Point.h"
-#include <iostream>
 using namespace std;
+#include <iostream>
 #include <math.h>  
 #include <cmath> 
 #include <iomanip>
 #include <string.h>
+
 #include "Square.h"
 #include "Rectangle.h"
+#include "Shape.h"
+#include "Point.h"
 
 
 Rectangle::Rectangle(double x, double y, double a, double b, const char* name):
@@ -36,7 +37,6 @@ Rectangle::Rectangle(const Rectangle& source):
 }
 
 Rectangle& Rectangle::operator =(Rectangle&rhs){
-
     if(this != &rhs){
         Square::operator=(rhs);
         side_b = rhs.get_side_b();

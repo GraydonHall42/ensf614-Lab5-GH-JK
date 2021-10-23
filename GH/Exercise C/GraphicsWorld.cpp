@@ -92,7 +92,8 @@ void GraphicsWorld::run(){
 
     #if 1
         cout << "\n\n\n CURVE CUT SECTION ------------------------------------------------------" << endl;
-        CurveCut rc (6, 5, 10, 12, 9, "CurveCut rc");
+        // CurveCut rc (6, 5, 10, 12, 40, "CurveCut rc");  // use to test for radius larger than sides error
+        CurveCut rc (6, 5, 10, 12, 9, "CurveCut rc"); 
         rc.display();
         cout << "the area of " << rc.getName() <<" is: "<< rc.area();
         cout << "the perimeter of " << rc.getName() << " is: "<< rc.perimeter();

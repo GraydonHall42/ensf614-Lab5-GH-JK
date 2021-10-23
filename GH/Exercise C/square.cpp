@@ -24,9 +24,9 @@ void Square::display(){
     cout << "Side a: " << setw(15) << get_side_a() << endl;
     cout << "Area: " << setw(17) << area() << endl;
     cout << "Perimeter: "<< setw(12) << perimeter()  << endl;
-
 }
 
+// copy constructor
 Square::Square(const Square& source):
     Shape(source)
 {
