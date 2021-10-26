@@ -1,3 +1,10 @@
+/* File Name: CurveCut.cpp
+* Lab # and Assignment #: Lab #5
+* Lab section: 1
+* Completed by: Graydon Hall and Jared Kraus
+* Submission Date: 2021-10-25
+*/
+
 using namespace std;
 
 #include <iostream>
@@ -27,7 +34,7 @@ double CurveCut::area(){
 }
 
 double CurveCut::perimeter(){
-    return Rectangle::area() -  0.25*Circle::perimeter() - 2*radius;
+    return Rectangle::perimeter() +  0.25*Circle::perimeter() - 2*radius;
 }
 
 // copy constructor
@@ -53,7 +60,5 @@ void CurveCut::display(){
     cout << "Y-coordinate: " << setw(9) << origin.gety() << endl;
     cout << "Side a: " << setw(15) << get_side_a() << endl;
     cout << "Side b: " << setw(15) << get_side_b() << endl;
-    cout << "Area: " << setw(17) << area() << endl;
-    cout << "Perimeter: "<< setw(12) << perimeter()  << endl;
     cout << "Cut Radius: "<< setw(11) << get_radius()  << endl;
 }

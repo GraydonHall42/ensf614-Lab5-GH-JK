@@ -1,3 +1,10 @@
+/* File Name: GraphicsWorld.cpp
+* Lab # and Assignment #: Lab #5
+* Lab section: 1
+* Completed by: Graydon Hall and Jared Kraus
+* Submission Date: 2021-10-25
+*/
+
 #include "GraphicsWorld.h"
 #include "Point.h"
 #include "Shape.h"
@@ -56,16 +63,17 @@ void GraphicsWorld::run(){
     #endif // end of block to test Rectangle
     #if 1 // Change 0 to 1 to test using array of pointer and polymorphism
         cout << "\nTesting array of pointers and polymorphism:" <<endl;
-        Shape* sh[4];
-        sh[0] = &s;
-        sh[1] = &b;
-        sh [2] = &rec1;
-        sh [3] = &rec3;
-        sh [0]->display();
-        sh [1]->display();
-        sh [2]->display();
-        sh [3]->display();
+        Shape* sh1[4];
+        sh1[0] = &s;
+        sh1[1] = &b;
+        sh1 [2] = &rec1;
+        sh1 [3] = &rec3;
+        sh1 [0]->display();
+        sh1 [1]->display();
+        sh1 [2]->display();
+        sh1 [3]->display();
     #endif // end of block to test array of pointer and polymorphism
+
 }
 
 int main(){

@@ -1,3 +1,10 @@
+/* File Name: Circle.cpp
+* Lab # and Assignment #: Lab #5
+* Lab section: 1
+* Completed by: Graydon Hall and Jared Kraus
+* Submission Date: 2021-10-25
+*/
+
 using namespace std;
 #include <iostream>
 #include <math.h>  
